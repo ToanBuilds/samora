@@ -6,6 +6,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { format } from "date-fns";
 import { vi } from "date-fns/locale";
+import axios from "axios";
 
 // Types
 interface ProductItem {
@@ -52,7 +53,7 @@ interface Order {
 const OrdersPage = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
-  
+  const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
   // State
   const [orders, setOrders] = useState<Order[]>([]);
   const [loading, setLoading] = useState(true);
@@ -96,13 +97,11 @@ const OrdersPage = () => {
         params.append("search", searchQuery);
       }
       
-      const response = await fetch(`/api/admin/orders?${params.toString()}`);
+      const response = await axios.get(`${API_BASE_URL}/admin/orders`, {
+        params: params
+      });
       
-      if (!response.ok) {
-        throw new Error("Failed to fetch orders");
-      }
-      
-      const data = await response.json();
+      const data = response.data;
       
       if (data.success) {
         setOrders(data.orders);
@@ -111,7 +110,11 @@ const OrdersPage = () => {
         setError(data.error || "Failed to fetch orders");
       }
     } catch (err) {
-      setError(err instanceof Error ? err.message : "An unknown error occurred");
+      if (axios.isAxiosError(err)) {
+        setError(err.response?.data?.error || err.message || "Failed to fetch orders");
+      } else {
+        setError("An unknown error occurred");
+      }
     } finally {
       setLoading(false);
     }
@@ -141,15 +144,13 @@ const OrdersPage = () => {
         return;
       }
       
-      const response = await fetch("/api/admin/orders/update", {
-        method: "POST",
+      const response = await axios.post(`${API_BASE_URL}/admin/orders/update`, updateData, {
         headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(updateData),
+          "Content-Type": "application/json"
+        }
       });
       
-      const data = await response.json();
+      const data = response.data;
       
       if (data.success) {
         setOrders((prevOrders) =>
@@ -163,7 +164,7 @@ const OrdersPage = () => {
               : order
           )
         );
-        fetchOrders()
+        fetchOrders();
         setIsModalOpen(false);
         setSelectedOrder(null);
         setAdminNotes("");
@@ -173,7 +174,11 @@ const OrdersPage = () => {
         setError(data.error || "Failed to update order");
       }
     } catch (err) {
-      setError(err instanceof Error ? err.message : "An unknown error occurred");
+      if (axios.isAxiosError(err)) {
+        setError(err.response?.data?.error || err.message || "Failed to update order");
+      } else {
+        setError("An unknown error occurred");
+      }
     }
   };
   
