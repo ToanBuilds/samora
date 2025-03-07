@@ -21,7 +21,7 @@ export default function ProductList({ products }: ProductListProps) {
                       
                     >
                         <Link href={`/san-pham/chi-tiet/${product.slug}`}>
-                            <div className="absolute z-30">
+                            <div className="absolute z-10">
                                 {/* Top right square box */}
                                 <div className="absolute -right-4">
                                     <div className="w-4 h-4 relative bg-white/0">

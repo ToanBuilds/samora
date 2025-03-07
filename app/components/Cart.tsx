@@ -11,6 +11,7 @@ const Cart = ({ onClose }: CartProps) => {
     const { cart, removeFromCart, clearCart, updateQuantity } = useCart();
     const [isOpen, setIsOpen] = useState(true);
     const router = useRouter();
+    
     const handleCheckout = () => {
        router.push('/thanh-toan')
     };
@@ -25,8 +26,8 @@ const Cart = ({ onClose }: CartProps) => {
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-end">
-            <div className="bg-white w-96 h-full p-3 overflow-y-auto">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-end z-[1000]">
+            <div className="bg-white w-96 h-full p-3 overflow-y-auto shadow-xl z-[1100] relative">
                 <div className="flex justify-between items-center mb-6 bg-blue-100 rounded-xl px-4 py-2">
                     <h2 className="text-base font-semibold">Giỏ hàng ({cart.length} sản phẩm)</h2>
                     <button onClick={handleClose} className="text-gray-500 hover:text-gray-700 text-3xl bg-blue-200 rounded-xl px-2">
