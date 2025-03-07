@@ -12,6 +12,16 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+  			man: [
+  				'Manrope',
+  				'sans-serif'
+  			],
+        dm: [
+  				'DM Sans',
+  				'sans-serif'
+  			]
+  		},
     },
   },
   plugins: [],
