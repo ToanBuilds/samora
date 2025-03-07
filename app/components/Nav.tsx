@@ -14,7 +14,7 @@ export default function Nav() {
 
   const bannerMessages = [
     "🌺 Ưu đãi đặc biệt ngày 8/3 - Giảm 20% cho tất cả sản phẩm Rượu Sâm 🌺",
-    "🎁 Tặng kèm Trà Sâm cao cấp cho đơn hàng từ 2 triệu đồng 🎁",
+    "🎁 Tặng kèm Trà Sâm cao cấp cho đơn hàng từ 1 triệu đồng 🎁",
     "🚚 Miễn phí vận chuyển toàn quốc cho đơn hàng từ 1 triệu đồng 🚚",
     "💝 Quà tặng sang trọng - Rượu Sâm Ngọc Linh thượng hạng 💝",
     "✨ Nhập mã 'SAMTET' giảm thêm 10% cho đơn hàng đầu tiên ✨"
