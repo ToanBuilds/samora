@@ -42,7 +42,7 @@ export default function ShopSection() {
     }
 
     return (
-        <div className="h-full w-full max-w-8xl mx-auto p-4 bg-white">
+        <div className="h-full w-full max-w-8xl mx-auto p-1 md:p-4 mt-1 bg-white">
             <Nav />
 
             {/* Banner */}

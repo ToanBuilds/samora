@@ -41,7 +41,7 @@ export default function CategoryNav({ categories, currentCategory }: CategoryNav
 <div className="w-full">
       {/* Hamburger button for mobile */}
       <div className="md:hidden flex justify-between items-center bg-white p-4 shadow-sm rounded-lg mb-2">
-        <h2 className="font-bold text-gray-800">Categories</h2>
+        <h2 className="font-bold text-gray-800">Loại Sản Phẩm</h2>
         <button 
           onClick={toggleMenu}
           className="p-2 text-gray-600 hover:bg-gray-100 rounded-lg transition-colors"

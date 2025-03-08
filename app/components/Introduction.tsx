@@ -115,93 +115,91 @@ export default function IntroSection() {
                     </div>
                 </div>
 
-            {/* Carousel container */}
-            <div className="relative rounded-xl overflow-hidden">
-                <div className="max-w-8xl mx-auto relative overflow-hidden ">
-                    <div className="bg-white rounded-xl overflow-hidden">
-                        <div className="flex flex-col md:flex-row gap-4">
-                            {/* Text Content (1/3 width) */}
-                            <div className="md:w-7/12 relative rounded-xl">
-                                <div className=" h-[40rem] rounded-lg overflow-hidden">
-                                    <Image
-                                        src="/SAM20-scaled.png"
-                                        alt="Bottom right image"
-                                        layout="fill"
-                                        objectFit="cover"
-                                        className="rounded-lg"
-                                    />
+                {/* Carousel container */}
+                <div className="relative rounded-xl overflow-hidden">
+                    <div className="max-w-8xl mx-auto relative overflow-hidden ">
+                        <div className="bg-white rounded-xl overflow-hidden">
+                            <div className="flex flex-col md:flex-row gap-4">
+                                {/* Text Content (1/3 width) */}
+                                <div className="md:w-7/12 relative rounded-xl">
+                                    <div className="h-[28rem] md:h-[40rem] rounded-lg overflow-hidden">
+                                        <Image
+                                            src="/gold3.png"
+                                            alt="Bottom right image"
+                                            layout="fill"
+                                            objectFit="cover"
+                                            className="rounded-lg"
+                                        />
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="md:w-5/12 p-12 bg-zinc-100 rounded-xl flex flex-col justify-between">
-                                <div>
-                                    <h2 className="text-2xl font-bold text-gray-800 mb-4">
-                                        Công Dụng Của Sâm Ngọc Linh Bảo Ly
-                                    </h2>
-                                </div>
+                                <div className="md:w-5/12 p-8 md:p-12 bg-zinc-100 rounded-xl flex flex-col justify-between">
+                                    <div>
+                                        <h2 className="text-2xl font-bold text-gray-800 mb-4">
+                                            Công Dụng Của Sâm Ngọc Linh Bảo Ly
+                                        </h2>
+                                    </div>
 
-                                <div>
-                                    <p className="text-gray-800 mb-4">
-                                        Sâm Ngọc Linh Bảo Ly là sản phẩm cao cấp, kết hợp tinh túy của thiên nhiên giúp <strong>tăng cường sức khỏe toàn diện</strong>.
-                                        Đây là <strong>siêu thảo dược</strong>  với nhiều <strong>dược tính quý giá</strong> , mang lại lợi ích vượt trội cho cơ thể.
-                                    </p>
-                                    <ul className="text-gray-800 mb-6 list-disc pl-5 space-y-2">
-                                        <li><strong>Bồi bổ cơ thể:</strong> Giúp hồi phục sức khỏe nhanh chóng, đặc biệt hiệu quả với người suy nhược.</li>
-                                        <li><strong>Tăng cường miễn dịch:</strong> Hỗ trợ tăng đề kháng, chống lại các tác nhân gây bệnh.</li>
-                                        <li><strong>Cải thiện trí nhớ:</strong> Giúp tỉnh táo, tập trung tốt hơn và giảm căng thẳng, mệt mỏi.</li>
-                                        <li><strong>Hỗ trợ tim mạch:</strong> Ổn định huyết áp, giảm cholesterol và tăng cường tuần hoàn máu.</li>
-                                        <li><strong>Chống lão hóa:</strong> Làm chậm quá trình lão hóa, giúp làn da khỏe mạnh và trẻ trung.</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            {/* Image (2/3 width) */}
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {/* 222 */}
-
-            <div className="relative rounded-xl overflow-hidden">
-                <div className="max-w-8xl mx-auto relative overflow-hidden ">
-                    <div className="bg-white rounded-xl overflow-hidden">
-                        <div className="flex flex-col md:flex-row gap-4">
-                            {/* Nội dung mô tả (1/3 chiều rộng) */}
-                            <div className="md:w-5/12 p-12 bg-zinc-100 rounded-xl flex flex-col justify-between">
-                                <div>
-                                    <h2 className="text-2xl font-bold text-gray-800 mb-4">Rượu Sâm Ngọc Linh Bảo Ly</h2>
+                                    <div>
+                                        <p className="text-gray-800 mb-4 text-sm md:text-base">
+                                            Sâm Ngọc Linh Bảo Ly là sản phẩm cao cấp, kết hợp tinh túy của thiên nhiên giúp <strong>tăng cường sức khỏe toàn diện</strong>.
+                                            Đây là <strong>siêu thảo dược</strong>  với nhiều <strong>dược tính quý giá</strong> , mang lại lợi ích vượt trội cho cơ thể.
+                                        </p>
+                                        <ul className="text-gray-800 mb-4 text-sm md:text-base list-disc pl-5 space-y-2">
+                                            <li><strong>Bồi bổ cơ thể:</strong> Giúp hồi phục sức khỏe nhanh chóng, đặc biệt hiệu quả với người suy nhược.</li>
+                                            <li><strong>Tăng cường miễn dịch:</strong> Hỗ trợ tăng đề kháng, chống lại các tác nhân gây bệnh.</li>
+                                            <li><strong>Cải thiện trí nhớ:</strong> Giúp tỉnh táo, tập trung tốt hơn và giảm căng thẳng, mệt mỏi.</li>
+                                            <li><strong>Hỗ trợ tim mạch:</strong> Ổn định huyết áp, giảm cholesterol và tăng cường tuần hoàn máu.</li>
+                                            <li><strong>Chống lão hóa:</strong> Làm chậm quá trình lão hóa, giúp làn da khỏe mạnh và trẻ trung.</li>
+                                        </ul>
+                                    </div>
                                 </div>
 
-                                <div>
-                                    <p className="text-gray-800 mb-4">
-                                        Chúng tôi tự hào là đơn vị tiên phong trong việc sản xuất và phân phối Rượu Sâm Ngọc Linh
-                                        chất lượng cao, được chế biến từ những củ sâm Ngọc Linh quý hiếm trên dãy Trường Sơn của Việt Nam.
-                                    </p>
-                                    <p className="text-gray-800 mb-6">
-                                        Với hơn 10 năm kinh nghiệm, chúng tôi cam kết mang đến cho khách hàng những sản phẩm
-                                        rượu sâm nguyên chất, được sản xuất theo quy trình nghiêm ngặt, đảm bảo giữ trọn vẹn
-                                        dược tính quý báu của sâm Ngọc Linh.
-                                    </p>
-                                </div>
+                                {/* Image (2/3 width) */}
 
-                            </div>
-
-                            {/* Hình ảnh (2/3 chiều rộng) */}
-                            <div className="md:w-7/12 relative rounded-xl">
-                                <div className="h-[40rem] rounded-lg overflow-hidden">
-                                    <Image
-                                        src="/gold.png"
-                                        alt="Sâm Ngọc Linh Bảo Ly"
-                                        layout="fill"
-                                        objectFit="cover"
-                                        className="rounded-lg"
-                                    />
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+                {/* 222 */}
+
+                <div className="relative rounded-xl overflow-hidden">
+                    <div className="max-w-8xl mx-auto relative overflow-hidden">
+                        <div className="bg-white rounded-xl overflow-hidden">
+                            <div className="flex flex-col md:flex-row gap-4">
+                                {/* Nội dung mô tả (1/3 chiều rộng) */}
+                                <div className="md:w-5/12 p-8 md:p-12 bg-zinc-100 rounded-xl flex flex-col justify-between">
+                                    <div>
+                                        <h2 className="text-2xl font-bold text-gray-800 mb-4">Khám Phá Sâm Ngọc Linh</h2>
+                                    </div>
+
+                                    <div>
+                                        <p className="text-gray-800 mb-4 text-sm md:text-base">
+                                            Sâm Ngọc Linh – báu vật thiên nhiên được phát hiện lần đầu tiên vào năm 1973 trên dãy núi Ngọc Linh,
+                                            tỉnh Kon Tum, Việt Nam. Đây là loại sâm quý hiếm, sinh trưởng tự nhiên ở độ cao trên 1.500m so với mực nước biển.
+                                        </p>
+                                        <p className="text-gray-800 mb-4 text-sm md:text-base">
+                                            Trải qua hàng thế kỷ, người dân tộc Xơ Đăng đã xem Sâm Ngọc Linh như một thần dược, dùng để bồi bổ sức khỏe
+                                            và chữa lành vết thương. Ngày nay, loại sâm này không chỉ là biểu tượng của sức khỏe mà còn mang ý nghĩa văn hóa sâu sắc.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                {/* Hình ảnh (2/3 chiều rộng) */}
+                                <div className="md:w-7/12 relative rounded-xl">
+                                    <div className="h-[28rem] md:h-[40rem] rounded-lg overflow-hidden">
+                                        <Image
+                                            src="/sam.png"
+                                            alt="Nguồn Gốc Sâm Ngọc Linh"
+                                            layout="fill"
+                                            objectFit="cover"
+                                            className="rounded-lg"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <div
                     className="bg-zinc-100 flex items-center justify-center text-black p-6 rounded-xl overflow-hidden relative"
@@ -215,7 +213,7 @@ export default function IntroSection() {
                     <ProductList products={products} />
                 </div>
             </div>
-            
-            </>
+
+        </>
     );
 }

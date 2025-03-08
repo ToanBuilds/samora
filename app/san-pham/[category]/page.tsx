@@ -55,38 +55,38 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   console.log(products)
   return (
     <>
-    <div className="h-full w-full max-w-8xl mx-auto p-4 bg-white">
-      <Nav />
+      <div className="h-full w-full max-w-8xl mx-auto p-1 md:p-4 mt-1 bg-white">
+        <Nav />
 
-      {/* Banner */}
-      <div className="bg-blue-100 flex flex-col items-start justify-center h-[16rem] mb-4 text-black p-16 rounded-xl overflow-hidden relative">
-        <h1 className="text-3xl font-semibold mb-4 mt-9">
-          {currentCategory.name}
-        </h1>
-        <p className="text-base text-zinc-800 max-w-xl">
-          Trải nghiệm những sản phẩm chất lượng cao từ Sâm Ngọc Linh,
-          được tuyển chọn kỹ lưỡng để mang đến sức khỏe tối ưu cho bạn và gia đình.
-        </p>
-      </div>
-
-      {/* Navigation categories */}
-      <CategoryNav
-        categories={categories}
-        currentCategory={category}
-      />
-
-      {/* Product list */}
-      <div className="relative rounded-xl overflow-hidden">
-        {products.length > 0 ? (
-          <ProductList products={products} />
-        ) : (
-          <p className="text-center py-12 text-gray-500">
-            Không có sản phẩm nào trong thể loại này.
+        {/* Banner */}
+        <div className="bg-blue-100 flex flex-col items-center sm:items-start justify-center h-auto sm:h-[16rem] mb-4 text-black px-6 sm:px-16 py-8 sm:py-16 rounded-xl overflow-hidden relative text-center sm:text-left">
+          <h1 className="text-xl sm:text-3xl font-semibold mb-4 mt-4 sm:mt-9">
+            {currentCategory.name}
+          </h1>
+          <p className="text-sm sm:text-base text-zinc-800 max-w-xl">
+            Trải nghiệm những sản phẩm chất lượng cao từ Sâm Ngọc Linh,
+            được tuyển chọn kỹ lưỡng để mang đến sức khỏe tối ưu cho bạn và gia đình.
           </p>
-        )}
+        </div>
+
+        {/* Navigation categories */}
+        <CategoryNav
+          categories={categories}
+          currentCategory={category}
+        />
+
+        {/* Product list */}
+        <div className="relative rounded-xl overflow-hidden">
+          {products.length > 0 ? (
+            <ProductList products={products} />
+          ) : (
+            <p className="text-center py-12 text-gray-500">
+              Không có sản phẩm nào trong thể loại này.
+            </p>
+          )}
+        </div>
       </div>
-    </div>
-    <FooterSection/>
-</>
+      <FooterSection />
+    </>
   );
 }

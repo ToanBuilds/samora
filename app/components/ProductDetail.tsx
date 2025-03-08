@@ -89,13 +89,13 @@ export default function ProductDetail({ product }: ProductDetailProps) {
     return (
         <>
 
-            <div className="relative mb-1 px-3">
+            <div className="relative mb-1 px-1">
                 <Nav />
             </div>
             <div className="flex flex-col md:flex-row h-screen">
                 {/* Sticky Image Section (3/5 width) */}
                 <div className="md:w-3/5 h-1/2 md:h-screen md:sticky md:top-0">
-                    <div className="h-full flex items-center justify-center relative p-3 rounded-xl">
+                    <div className="h-full flex items-center justify-center relative md:p-3 p-2 rounded-xl">
                         {selectedImage ? (
                             <div className="relative h-full w-full">
                                 <img
@@ -135,7 +135,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
                 </div>
 
                 {/* Product Details Section (2/5 width) */}
-                <div className="w-full md:w-2/5 py-3 md:py-3 px-3 md:pr-3 overflow-y-auto">
+                <div className="w-full md:w-2/5 md:py-3 px-2 md:px-3 md:pr-3 overflow-y-auto">
                     <div
                         className="bg-zinc-100 items-center justify-center text-black p-4 md:p-12 rounded-xl overflow-hidden relative"
                     >
@@ -151,7 +151,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
                             </Link>
                         </div>
 
-                        <h1 className="text-2xl md:text-4xl font-normal">{product.name}</h1>
+                        <h1 className="text-2xl md:text-4xl font-normal">{product.category} {product.name}</h1>
 
                         <div className="mt-4 md:mt-6 flex flex-wrap items-center">
                             <span className="text-xl md:text-3xl font-medium text-blue-600">

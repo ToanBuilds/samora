@@ -84,7 +84,7 @@ export default function AboutSection() {
                     <div className="bg-white rounded-xl overflow-hidden">
                         <div className="flex flex-col md:flex-row gap-4">
                             {/* Text Content (1/3 width) */}
-                            <div className="md:w-1/3 p-12 bg-zinc-100 rounded-xl flex flex-col justify-between">
+                            <div className="md:w-1/3 p-8 md:p-12 bg-zinc-100 rounded-xl flex flex-col justify-between">
                                 <div>
                                     <h2 className="text-2xl font-bold text-gray-800 mb-4">Rượu Sâm Ngọc Linh Bảo Ly</h2>
                                 </div>
@@ -94,14 +94,11 @@ export default function AboutSection() {
                                     Chúng tôi tự hào là đơn vị tiên phong trong việc sản xuất và phân phối Rượu Sâm Ngọc Linh 
                                     chất lượng cao, được chế biến từ những củ sâm Ngọc Linh quý hiếm trên dãy Trường Sơn của Việt Nam.
                                     </p>
-                                    <p className="text-gray-800 mb-6 text-sm md:text-base">
+                                    <p className="text-gray-800 mb-4 text-sm md:text-base">
                                     Với hơn 10 năm kinh nghiệm, chúng tôi cam kết mang đến cho khách hàng những sản phẩm 
                                         rượu sâm nguyên chất, được sản xuất theo quy trình nghiêm ngặt, đảm bảo giữ trọn vẹn 
                                         dược tính quý báu của sâm Ngọc Linh.
                                     </p>
-                                    <a href="#" className="text-zinc-800 hover:text-zinc-600 text-sm transition duration-200">
-                                        Xem Thêm
-                                    </a>
                                 </div>
                             </div>
 

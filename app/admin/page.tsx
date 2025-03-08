@@ -11,7 +11,7 @@ export default function Home() {
         <Nav />
       </div>
       <Suspense fallback={<div>Loading...</div>}>
-      <OrdersPage />
+        <OrdersPage />
       </Suspense>
       <FooterSection />
     </div>
