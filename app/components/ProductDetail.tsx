@@ -167,40 +167,41 @@ export default function ProductDetail({ product }: ProductDetailProps) {
                             {product.description}
                         </div>
 
-                        {/* Action Buttons */}
+                       {product.price !== 0 ?
                         <div className="mt-8 lg:mt-16 mb-4 flex flex-col lg:flex-row items-start lg:items-center gap-4 lg:gap-0">
-                            <div className="flex items-center">
-                                <span className="mr-3 font-medium">Số lượng:</span>
-                                <div className="flex items-center border border-gray-300 rounded-md space-x-2">
-                                    <button
-                                        onClick={decreaseQuantity}
-                                        className="px-3 py-2 text-gray-600 hover:bg-gray-100 border-r border-gray-300"
-                                        disabled={quantity <= 1}
-                                    >
-                                        -
-                                    </button>
-                                    <span className="px-4 py-2 min-w-[40px] text-center">
-                                        {quantity}
-                                    </span>
-                                    <button
-                                        onClick={increaseQuantity}
-                                        className="px-3 py-2 text-gray-600 hover:bg-gray-100 border-l border-gray-300"
-                                        disabled={quantity >= product.stock}
-                                    >
-                                        +
-                                    </button>
-                                </div>
+                        <div className="flex items-center">
+                            <span className="mr-3 font-medium">Số lượng:</span>
+                            <div className="flex items-center border border-gray-300 rounded-md space-x-2">
+                                <button
+                                    onClick={decreaseQuantity}
+                                    className="px-3 py-2 text-gray-600 hover:bg-gray-100 border-r border-gray-300"
+                                    disabled={quantity <= 1}
+                                >
+                                    -
+                                </button>
+                                <span className="px-4 py-2 min-w-[40px] text-center">
+                                    {quantity}
+                                </span>
+                                <button
+                                    onClick={increaseQuantity}
+                                    className="px-3 py-2 text-gray-600 hover:bg-gray-100 border-l border-gray-300"
+                                    disabled={quantity >= product.stock}
+                                >
+                                    +
+                                </button>
                             </div>
-
-                            <button onClick={() => {
-                                handleAddToCart()
-                                setIsCartOpen(true)
-                            }}
-
-                                className="w-full lg:w-auto px-6 lg:ml-8 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-500 flex-grow lg:flex-grow-0">
-                                Thêm vào giỏ hàng
-                            </button>
                         </div>
+
+                        <button onClick={() => {
+                            handleAddToCart()
+                            setIsCartOpen(true)
+                        }}
+
+                            className="w-full lg:w-auto px-6 lg:ml-8 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-500 flex-grow lg:flex-grow-0">
+                            Thêm vào giỏ hàng
+                        </button>
+                    </div> : <></>}
+                       
 
                     </div>
                 

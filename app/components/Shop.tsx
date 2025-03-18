@@ -61,7 +61,13 @@ export default function ShopSection() {
 
             {/* Product list */}
             <div className="relative rounded-xl overflow-hidden">
-                <ProductList isChebien={false} products={products} />
+            {products.length > 0 ? (
+            <ProductList isChebien={false} products={products} />
+          ) : (
+            <p className="text-center py-12 text-gray-500">
+              Không có sản phẩm nào trong thể loại này.
+            </p>
+          )}
             </div>
         </div>
     );

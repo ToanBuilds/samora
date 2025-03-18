@@ -3,7 +3,7 @@ import { Phone, Mail, MessageSquare } from 'lucide-react';
 
 const ContactBanner = () => {
   return (
-    <div className="w-full bg-blue-50 py-3 px-4 md:px-8 shadow-sm">
+    <div className="w-full bg-blue-50 py-3 px-4 md:px-8 shadow-sm mb-6 mt-4">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
         {/* Số điện thoại */}
         <div className="flex items-center gap-2">

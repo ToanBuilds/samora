@@ -14,7 +14,7 @@ export default function ProductList({ products, isChebien }: ProductListProps) {
     useEffect(() => {
         // Tạo các lá cây ngẫu nhiên khi component mount
         const generateLeaves = () => {
-            const numberOfLeaves = 40; // Số lượng lá cây
+            const numberOfLeaves = 30; // Số lượng lá cây
             const newLeaves = [];
             
             for (let i = 0; i < numberOfLeaves; i++) {
@@ -48,7 +48,7 @@ export default function ProductList({ products, isChebien }: ProductListProps) {
     return (
         <div className="max-w-8xl mx-auto mt-4 relative overflow-hidden">
             {/* Lá cây trang trí */}
-            <div className="absolute inset-0 w-full h-full pointer-events-none z-50">
+            <div className="absolute inset-0 w-full h-full pointer-events-none z-10">
                 {leaves.map((leaf) => (
                     <div
                         key={leaf.id}
@@ -57,7 +57,7 @@ export default function ProductList({ products, isChebien }: ProductListProps) {
                             left: `${leaf.x}%`,
                             top: `${leaf.y}%`,
                             transform: `rotate(${leaf.rotation}deg) scale(${leaf.scale})`,
-                            opacity: 0.8,
+                            opacity: 0.5,
                             zIndex: Math.floor(leaf.y) % 2 === 0 ? 10 : 0, // Một số lá phía trên, một số lá phía dưới
                             overflow: 'visible',
                         }}
@@ -114,7 +114,7 @@ export default function ProductList({ products, isChebien }: ProductListProps) {
                                     />
                                 </div>
                             </div>
-                            <div className="bg-white rounded-xl overflow-hidden transition-opacity duration-300 relative group shadow-md hover:shadow-lg">
+                            <div className="bg-white rounded-xl overflow-hidden transition-opacity duration-300 relative group ">
                                 <div className="absolute inset-0 bg-gradient-to-t from-green-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                                 
                                 <img

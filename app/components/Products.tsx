@@ -115,7 +115,9 @@ export default function ProductsSection() {
                     getAllProducts(),
                     getAllCategories(),
                 ]);
-                setProducts(fetchedProducts.slice(0, 8));
+                const freeProducts = fetchedProducts.filter((product: Product) => product.price === 0);
+
+            setProducts(freeProducts);
                 setCategories(fetchedCategories);
             } catch (err) {
                 setError("Lỗi khi tải dữ liệu.");
@@ -168,7 +170,7 @@ export default function ProductsSection() {
                 className="bg-blue-50 flex items-center justify-center text-black p-4 md:p-6 rounded-xl overflow-hidden relative"
             >
                 <div className="text-center text-sm md:text-base font-normal">
-                    <span>Tất Cả Sản Phẩm Từ Sâm Ngọc Linh</span>
+                    <span>Các sản phẩm nổi bật khác</span>
                 </div>
             </div>
             {/* Carousel container */}

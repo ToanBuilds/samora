@@ -32,7 +32,7 @@ const CertificateGallery: React.FC<CertificateProps> = ({
     };
 
     return (
-        <section className="w-full bg-amber-50 py-12">
+        <section className="w-full bg-blue-50 py-12 mt-6">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center mb-8">

@@ -41,7 +41,7 @@ const CategoryCard: React.FC<CategoryProps> = ({
             <p className="mt-2 text-lg font-semibold text-red-600">{price}</p>
           )}
           <div className="mt-4 flex items-center text-blue-500 font-semibold">
-            <span>Xem chi tiết</span>
+            <span>Xem thêm</span>
             <svg className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
@@ -59,33 +59,33 @@ const NgocLinhProductCategories: React.FC = () => {
       description: "Củ sâm Ngọc Linh tự nhiên với hàm lượng saponin cao, phát triển từ vùng núi Ngọc Linh. Giá trị dược liệu cao, tính theo ký.",
       price: "Giá: Từ 80.000.000đ/ký - 200.000.000đ/ký (Tuỳ thuộc vào tuổi đời Củ Sâm Ngọc Linh)",
       imageUrl: "/1.jpg",
-      href: "/san-pham/ruou-sam-ngoc-linh",
+      href: "/cu-sam-ngoc-linh",
     },
     {
       title: "Lá Sâm Ngọc Linh",
       description: "Lá sâm Ngọc Linh chứa nhiều dược chất quý, thu hái từ cây sâm tự nhiên, giúp tăng cường sức khỏe và hỗ trợ điều trị nhiều bệnh. Tính theo ký.",
       price: "Giá: 15.000.000đ/ký",
-      imageUrl: "/7.jpg",
-      href: "/san-pham/ruou-sam-ngoc-linh",
+      imageUrl: "/lasam/7.jpg",
+      href: "/la-sam-ngoc-linh",
     },
     {
       title: "Hoa Sâm Ngọc Linh",
       description: "Hoa sâm Ngọc Linh quý hiếm với đặc tính dược liệu cao, thu hoạch theo mùa. Thích hợp làm trà hoặc ngâm rượu. Tính theo ký.",
       price: "",
       imageUrl: "/4.jpg",
-      href: "/san-pham/ruou-la-sam-ngoc-linh",
+      href: "/hoa-sam-ngoc-linh",
     },
     {
       title: "Hạt Sâm Ngọc Linh",
       description: "Hạt sâm Ngọc Linh quý giá dùng để gieo trồng hoặc làm thuốc, chứa nhiều dược chất có lợi cho sức khỏe. Cung cấp giống sâm chất lượng cao.",
       price: "Giá: Từ 100.000đ/hạt",
-      imageUrl: "/hatsam.jpg",
-      href: "/san-pham/che-bien",
+      imageUrl: "/hatsam/7.jpg",
+      href: "/hat-sam-ngoc-linh",
     },
   ];
 
   return (
-    <section className="mx-auto max-w-8xl px-4 py-16 bg-amber-50 max-md:mt-24">
+    <section className="mx-auto max-w-8xl px-4 py-16 bg-blue-50 max-md:mt-24">
       <div className="text-center">
         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
           <span className="relative">

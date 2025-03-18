@@ -105,7 +105,7 @@ export default function HeroSection() {
       {/* Header Bar - Logo, Search, Cart */}
       {/* Top Header với thông tin liên hệ */}
       <div className="bg-blue-800 text-white py-2 px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center max-w-8xl mx-auto">
+        <div className="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto">
           <div className="flex flex-col sm:flex-row items-center mb-2 md:mb-0">
             <div className="flex items-center">
               <Phone size={14} className="mr-1" />
@@ -127,7 +127,7 @@ export default function HeroSection() {
 
       {/* Main Header with Logo and Navigation */}
       <div className="bg-amber-100 py-3 px-4 top-0">
-        <div className="flex flex-col md:flex-row justify-between items-center max-w-8xl mx-auto">
+        <div className="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto">
           <div className="flex items-center mb-3 md:mb-0">
             <Image
               src="/logo.png"
@@ -193,31 +193,34 @@ export default function HeroSection() {
         {/* Main Navigation Menu */}
         <Nav />
 
-        {/* Carousel */}
-        <div className="w-full h-full relative">
-          {carouselImages.map((image, index) => (
-            <motion.div
-              key={index}
-              className="absolute top-0 left-0 w-full h-full"
-              initial={{ opacity: 0 }}
-              animate={{
-                opacity: currentSlide === index ? 1 : 0,
-                zIndex: currentSlide === index ? 10 : 0
-              }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="relative w-full h-full bg-[#F5F5F0]">
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  className={`object-cover ${image.src == "/sam.png" ? "object-[50%_25%]" : "object-[50%_55%]"}`}
-                  priority={index === 0} // Prioritize loading the first image
-                />
-
-                {/* Content overlay with newspaper-like styling */}
-                <div className="absolute bottom-4 sm:bottom-8 left-4 sm:left-8 z-20 w-[90%] sm:w-[80%] md:w-[60%] lg:max-w-md">
-                  <div className="backdrop-blur-md bg-white/90 border-l-4 border-blue-800 p-4 sm:p-5 rounded-r-xl text-black shadow-lg">
+       {/* Carousel */}
+  <div className="w-full h-full relative">
+    {carouselImages.map((image, index) => (
+      <motion.div
+        key={index}
+        className="absolute top-0 left-0 w-full h-full"
+        initial={{ opacity: 0 }}
+        animate={{
+          opacity: currentSlide === index ? 1 : 0,
+          zIndex: currentSlide === index ? 10 : 0
+        }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="flex flex-col md:relative w-full h-full bg-[#F5F5F0]">
+          {/* Image container with fixed height on mobile */}
+          <div className="relative w-full h-[50vh] md:h-full">
+            <Image
+              src={image.src}
+              alt={image.alt}
+              fill
+              className={`object-cover ${image.src == "/sam.png" ? "object-[50%_25%]" : "object-[50%_55%]"}`}
+              priority={index === 0}
+            />
+          </div>
+          
+          {/* Content overlay - positioned below on mobile, overlaid on desktop */}
+          <div className="w-full md:absolute md:bottom-8 md:left-8 md:z-20 md:w-[80%] md:max-w-md p-4">
+            <div className="backdrop-blur-md bg-white/90 border-l-4 border-blue-800 p-4 sm:p-5 rounded-r-xl text-black shadow-lg">
                     {/* Product featured heading */}
                     <div className="bg-blue-800 text-white inline-block px-2 py-1 text-xs mb-3">SẢN PHẨM NỔI BẬT</div>
 
@@ -252,7 +255,7 @@ export default function HeroSection() {
                       </Link>
 
                       <Link
-                        href="/mua-ngay"
+                       href={image.link}
                         className="border border-amber-500 bg-amber-500 hover:bg-amber-600 text-white py-2 px-4 rounded-lg text-sm font-medium transition duration-300 text-center flex-1 flex items-center justify-center"
                       >
                         <ShoppingCart className="w-4 h-4 mr-1" /> Mua Ngay
