@@ -2,18 +2,26 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 
+interface CertificateItem {
+    id: string;
+    imageUrl: string;
+}
+
+interface CertificateCategory {
+    id: string;
+    title: string;
+    description: string;
+    items: CertificateItem[];
+}
+
 interface CertificateProps {
-    certificates: {
-        id: string;
-        title: string;
-        imageUrl: string;
-    }[];
+    categories: CertificateCategory[];
     title?: string;
     subtitle?: string;
 }
 
 const CertificateGallery: React.FC<CertificateProps> = ({
-    certificates,
+    categories,
     title = "Chứng chỉ & Giấy tờ pháp lý",
     subtitle = "Các chứng nhận chất lượng và giấy tờ pháp lý của sản phẩm"
 }) => {
@@ -47,42 +55,48 @@ const CertificateGallery: React.FC<CertificateProps> = ({
                     </p>
                 </div>
 
-                {/* Certificate Gallery */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {certificates.map((certificate) => (
-                        <div
-                            key={certificate.id}
-                            className="relative group cursor-pointer"
-                            onClick={() => openModal(certificate.imageUrl)}
-                        >
-                            <div className="aspect-[1/1.414] bg-white rounded-lg shadow-md overflow-hidden border-2 border-gray-200 group-hover:shadow-xl group-hover:border-blue-300 transition-all duration-300">
-                                <div className="relative w-full h-full">
-                                    <Image
-                                        src={certificate.imageUrl}
-                                        alt={certificate.title}
-                                        fill
-                                        className="object-cover"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                                        <div className="p-4 w-full">
-                                            <h3 className="text-white font-medium text-lg truncate">{certificate.title}</h3>
-                                            <div className="flex items-center mt-2">
-                                                <span className="text-white text-sm flex items-center">
-                                                    <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                                                    </svg>
-                                                    Xem chi tiết
-                                                </span>
+                {/* Categories */}
+                <div className="space-y-12">
+                    {categories.map((category) => (
+                        <div key={category.id} className="bg-amber-50 text-center rounded-lg shadow-md p-6">
+                            <h3 className="text-2xl font-semibold text-gray-800 mb-2">{category.title}</h3>
+                            <p className="text-gray-600 text-sm md:text-base mb-6">{category.description}</p>
+                            
+                            {/* Certificate Gallery for this category */}
+                            <div className="flex flex-col items-center space-y-6">
+                                {category.items.map((item) => (
+                                    <div
+                                        key={item.id}
+                                        className="relative group cursor-pointer w-full max-w-2xl"
+                                        onClick={() => openModal(item.imageUrl)}
+                                    >
+                                        <div className="aspect-[1/1.414] bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 group-hover:shadow-xl group-hover:border-blue-300 transition-all duration-300">
+                                            <div className="relative w-full h-full">
+                                                <Image
+                                                    src={item.imageUrl}
+                                                    alt={`${category.title} - Tài liệu`}
+                                                    fill
+                                                    className="object-cover"
+                                                />
+                                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                                                    <div className="p-4 w-full text-center">
+                                                        <span className="text-white text-base flex items-center justify-center">
+                                                            <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                                            </svg>
+                                                            Xem chi tiết
+                                                        </span>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                ))}
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
-
             {/* Modal xem ảnh lớn */}
             {selectedImage && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80" onClick={closeModal}>

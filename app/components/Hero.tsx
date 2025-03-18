@@ -185,7 +185,7 @@ export default function HeroSection() {
 
       {/* Carousel container */}
       <div
-        className="relative w-full flex-1 h-[calc(100vh-12rem)] min-h-[18rem] rounded-xl overflow-hidden"
+        className="relative w-full flex-1 h-full min-h-[18rem] rounded-xl overflow-hidden"
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}

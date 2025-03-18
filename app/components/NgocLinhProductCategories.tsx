@@ -85,7 +85,7 @@ const NgocLinhProductCategories: React.FC = () => {
   ];
 
   return (
-    <section className="mx-auto max-w-8xl px-4 pb-8 pt-16 bg-blue-50 max-md:mt-24">
+    <section className="mx-auto max-w-8xl px-4 pb-8 pt-24 md:pt-64 bg-blue-50 max-md:mt-24">
       <div className="text-center">
         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
           <span className="relative">
