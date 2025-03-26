@@ -38,11 +38,11 @@ interface Product {
   stock: number;
   price: number;
   isAvailable: boolean;
-  ingredients: string; // Thành phần
-  benefits: string; // Công dụng
-  usageInstructions: string; // Hướng dẫn sử dụng
-  storageInstructions: string; // Cách bảo quản
-  volume: string; // Thể tích (ml/l)
+  ingredients: string;
+  benefits: string;
+  usageInstructions: string; 
+  storageInstructions: string; 
+  volume: string; 
 }
 
 
