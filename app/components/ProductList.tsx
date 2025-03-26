@@ -191,7 +191,7 @@ export default function ProductList({ products, isChebien }: ProductListProps) {
                                 </div>
 
                                 {/* New white box in bottom right */}
-                                <div className="absolute bottom-0 right-0 bg-white p-1.5 sm:p-2 rounded-tl-3xl">
+                                <div className="absolute bottom-0 right-0 bg-white p-2 rounded-tl-3xl">
                                     <div className="absolute -left-4 bottom-0">
                                         <div className="w-4 h-4 relative bg-white/0">
                                             <div
@@ -202,19 +202,13 @@ export default function ProductList({ products, isChebien }: ProductListProps) {
                                             />
                                         </div>
                                     </div>
-                                    <p className="text-[0.55rem] sm:text-xs md:text-sm font-semibold text-black truncate max-w-[80px] sm:max-w-[120px] md:max-w-[150px]">
-                                        {isChebien ? product.category : product.name}
-                                    </p>
-                                    {/* Price display for mobile */}
-                                    <p className="text-[0.55rem] sm:text-xs text-blue-600 font-medium sm:hidden mt-0.5 truncate">
-                                        {formatProductPrice(product)}
-                                    </p>
+                                    <p className="text-[0.60rem] md:text-sm font-semibold text-black">{isChebien ? product.category : product.name}</p>
                                     <div className="absolute md:bottom-9 bottom-7 right-0">
                                         <div className="w-4 h-4 relative bg-white/0">
                                             <div
-                                                className="absolute bottom-0 right-0 w-4 h-4 bg-white"
+                                                className="absolute bottom-0 left-0 w-4 h-4 bg-white"
                                                 style={{
-                                                    clipPath: 'path("M16 16C16 7.16344 7.16344 0 0 0L16 0L16 16Z")'
+                                                    clipPath: 'path("M0 16C8.83656 16 16 7.16344 16 0L16 16L0 16Z")'
                                                 }}
                                             />
                                         </div>
