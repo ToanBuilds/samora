@@ -7,18 +7,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useCart } from './CartContext';
 import Cart from './Cart';
+import { useScrollAnimation } from './utils/useScrollAnimation';
 
 export default function Nav() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [bannerMessage, setBannerMessage] = useState(0);
 
-  const bannerMessages = [
-    "🌺 Ưu đãi đặc biệt ngày 8/3 - Giảm 20% cho tất cả sản phẩm Rượu Sâm 🌺",
-    "🎁 Tặng kèm Trà Sâm cao cấp cho đơn hàng từ 1 triệu đồng 🎁",
-    "🚚 Miễn phí vận chuyển toàn quốc cho đơn hàng từ 1 triệu đồng 🚚",
-    "💝 Quà tặng sang trọng - Rượu Sâm Ngọc Linh thượng hạng 💝",
-    "✨ Nhập mã 'SAMTET' giảm thêm 10% cho đơn hàng đầu tiên ✨"
-  ];
+
   const navItems = [
     { title: 'Cửa Hàng', href: '/san-pham' },
     {
@@ -33,8 +28,10 @@ export default function Nav() {
         { title: 'Cây Giống Và Hạt Sâm Ngọc Linh', href: '/san-pham/cay-giong-hat', image: '/hatsam.jpg' },
       ]
     },
+    { title: 'Sâm Ngọc Linh', href: '/ve-sam-ngoc-linh' },
     { title: 'Giới Thiệu', href: '/gioi-thieu' },
     { title: 'Liên Hệ', href: '/lien-he' },
+
   ];
   const topRightNavItems = [
     { title: 'Đăng Nhập', href: '/login' },
@@ -53,6 +50,14 @@ export default function Nav() {
   useEffect(() => {
     setIsMounted(true);
   }, []);
+  const { ref, isInView, containerVariants, itemVariants } = useScrollAnimation();
+  const bannerMessages = [
+      "🌺 Ưu đãi đặc biệt ngày 8/3 - Giảm 20% cho tất cả sản phẩm Rượu Sâm 🌺",
+      "🎁 Tặng kèm Trà Sâm cao cấp cho đơn hàng từ 2 triệu đồng 🎁",
+      "🚚 Miễn phí vận chuyển toàn quốc cho đơn hàng từ 1 triệu đồng 🚚",
+      "💝 Quà tặng sang trọng - Rượu Sâm Ngọc Linh thượng hạng 💝",
+      "✨ Nhập mã 'SAMTET' giảm thêm 10% cho đơn hàng đầu tiên ✨"
+  ];
   return (
 
 <>

@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import { Category, getAllCategories, getProductsByCategory } from '@/app/components/api';
 import Nav from '@/app/components/Nav';
 import FooterSection from '@/app/components/Footer';
+import HeaderSection from '@/app/components/Header';
 
 interface CategoryPageProps {
   params: {
@@ -54,8 +55,9 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   const products = await getProductsByCategory(currentCategory.name);
   console.log(products)
   return (
-    <>
+    <>  <HeaderSection/>
       <div className="h-full w-full max-w-8xl mx-auto p-1 md:p-4 mt-1 bg-white">
+    
         <Nav />
 
         {/* Banner */}

@@ -2,6 +2,7 @@
 import AboutSection from '@/app/components/AboutUs';
 import { getAllProducts, getProductBySlug } from '@/app/components/api';
 import FooterSection from '@/app/components/Footer';
+import HeaderSection from '@/app/components/Header';
 import ProductDetail from '@/app/components/ProductDetail';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -24,7 +25,7 @@ export async function generateMetadata({ params }: ProductDetailPageProps) {
     }
 
     return {
-        title: product.category + " " +product.name,
+        title: product.category + " " + product.name,
         description: product.benefits.substring(0, 160),
     };
 }
@@ -49,6 +50,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
 
     return (
         <>
+            <HeaderSection />
             <ProductDetail product={product} />
             <FooterSection />
         </>

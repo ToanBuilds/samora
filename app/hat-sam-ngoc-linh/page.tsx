@@ -1,6 +1,7 @@
 import AboutSection from "../components/AboutUs";
 import ContactPage from "../components/Contact";
 import FooterSection from "../components/Footer";
+import HeaderSection from "../components/Header";
 import ImageGallery from "../components/ImageGallery";
 import IntroSection from "../components/Introduction";
 import Nav from "../components/Nav";
@@ -16,6 +17,7 @@ export default function CuSam() {
   }));
   return (
     <div className="font-man">
+       <HeaderSection/>
       <div className="relative mb-1 px-3">
         <Nav />
       </div>

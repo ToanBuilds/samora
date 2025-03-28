@@ -1,12 +1,11 @@
 import FooterSection from "../components/Footer";
-import HeaderSection from "../components/Header";
-import ShopSection from "../components/Shop";
+import SamNgocLinhIntroduction from "../components/SamNgocLinhIntroduction";
+
 
 export default function Home() {
   return (
     <div className="font-man">
-      <HeaderSection/>
-      <ShopSection />
+      <SamNgocLinhIntroduction/>
       <FooterSection/>
     </div>
   );

@@ -169,7 +169,7 @@ export default function IntroSection() {
                                     <div>
                                         <p className="text-gray-800 mb-4 text-sm md:text-base">
                                             Sâm Ngọc Linh – báu vật thiên nhiên được phát hiện lần đầu tiên vào năm 1973 trên dãy núi Ngọc Linh,
-                                            tỉnh Kon Tum, Việt Nam. Đây là loại sâm quý hiếm, sinh trưởng tự nhiên ở độ cao trên 1.500m so với mực nước biển.
+                                            tỉnh Quảng Nam, Việt Nam. Đây là loại sâm quý hiếm, sinh trưởng tự nhiên ở độ cao trên 1.500m so với mực nước biển.
                                         </p>
                                         <p className="text-gray-800 mb-4 text-sm md:text-base">
                                             Trải qua hàng thế kỷ, người dân tộc Xơ Đăng đã xem Sâm Ngọc Linh như một thần dược, dùng để bồi bổ sức khỏe
