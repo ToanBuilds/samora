@@ -8,7 +8,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     // Get all products
     const products = await db.collection('Products')
-        .find({ isAvailable: true })
+        .find()
         .toArray();
 
     // Generate product URLs

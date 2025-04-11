@@ -73,6 +73,14 @@ export const metadata: Metadata = {
     icon: "https://www.samngoclinhbaoly.vn/logo.png",
     apple: "https://www.samngoclinhbaoly.vn/logo.png",
   },
+  verification: {
+    google: "c9lj3WseNZ1hfM78XO7hH34kuUuRIPoulKQi_k87GjI",
+  },
+  other: {
+    "apple-mobile-web-app-title": "Sâm Ngọc Linh Bảo Ly",
+    "application-name": "Sâm Ngọc Linh Bảo Ly",
+    "google-site-verification": "c9lj3WseNZ1hfM78XO7hH34kuUuRIPoulKQi_k87GjI"
+  },
 };
 
 export default function RootLayout({
