@@ -63,7 +63,7 @@ export default function Nav() {
 <>
 
       {/* Main Navigation Container */}
-      <div className="absolute z-30 ">
+      <div className="absolute z-20 ">
         {/* Top right square box */}
         <div className="absolute -right-4">
           <div className="w-4 h-4 relative bg-white/0">
@@ -206,7 +206,7 @@ export default function Nav() {
       </div>
 
       {/* Top Right Nav (Cart & Search) */}
-      <div className="absolute top-0 right-0 z-30">
+      <div className="absolute top-0 right-0 z-20">
         <div className="absolute -left-4">
           <div className="w-4 h-4 relative bg-white/0">
             <div
@@ -243,11 +243,11 @@ export default function Nav() {
                   )}
                 </button>
               </div>
-              {isCartOpen && <Cart onClose={() => setIsCartOpen(false)} />}
+           
             </li>
           </motion.ul>
         </nav>
-        
+       
         <div className="absolute right-0">
           <div className="w-4 h-4 relative bg-white/0">
             <div
@@ -259,7 +259,7 @@ export default function Nav() {
           </div>
         </div>
       </div>
-
+      {isCartOpen && <Cart onClose={() => setIsCartOpen(false)} />}
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isMobileMenuOpen && (
