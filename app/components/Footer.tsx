@@ -19,7 +19,7 @@ export default function FooterSection() {
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={containerVariants}
-      className="bg-gradient-to-b from-zinc-50 to-zinc-100 text-black py-12"
+      className="bg-gradient-to-b from-zinc-50 to-zinc-100 text-black py-12 max-md:px-4"
     >
       <div className="container mx-auto">
         {/* Top Section */}
@@ -63,21 +63,10 @@ export default function FooterSection() {
                 <Home className="h-5 w-5 text-green-600 mt-1 mr-3 flex-shrink-0" />
                 <div>
                   <p className="font-semibold text-gray-800">Trụ sở chính:</p>
-                  <p className="text-gray-600">15 Chế Lan Viên, Phường Tân Thạnh, Thành phố Tam Kỳ, Tỉnh Quảng Nam</p>
+                  <p className="text-gray-600">S1.03 Vinhomes Grand Park, Phường Long Bình, Thành Phố Hồ Chí Minh</p>
                 </div>
               </motion.div>
-              
-              {/* Representative Office */}
-              <motion.div 
-                variants={fadeInVariants}
-                className="flex items-start"
-              >
-                <Building className="h-5 w-5 text-green-600 mt-1 mr-3 flex-shrink-0" />
-                <div>
-                  <p className="font-semibold text-gray-800">Văn phòng đại diện:</p>
-                  <p className="text-gray-600">32/5/10 Đường số 12, Phường 11, Quận Gò Vấp, TP.Hồ Chí Minh</p>
-                </div>
-              </motion.div>
+            
               
               {/* Email */}
               <motion.div 
@@ -85,8 +74,8 @@ export default function FooterSection() {
                 className="flex items-center"
               >
                 <Mail className="h-5 w-5 text-green-600 mr-3 flex-shrink-0" />
-                <a href="mailto:maiphuccl@gmail.com" className="text-gray-600 hover:text-green-600 transition-colors">
-                  maiphuccl@gmail.com
+                <a href="mailto:tuandominh2010@gmail.com" className="text-gray-600 hover:text-green-600 transition-colors">
+                  tuandominh2010@gmail.com
                 </a>
               </motion.div>
               
@@ -96,8 +85,8 @@ export default function FooterSection() {
                 className="flex items-center"
               >
                 <Phone className="h-5 w-5 text-green-600 mr-3 flex-shrink-0" />
-                <a href="tel:0903924405" className="text-gray-600 hover:text-green-600 transition-colors">
-                  Hotline: 0903 924 405
+                <a href="tel:0962505176" className="text-gray-600 hover:text-green-600 transition-colors">
+                  Hotline: 0962 505 176
                 </a>
               </motion.div>
             </div>
@@ -149,11 +138,11 @@ export default function FooterSection() {
             Liên hệ với chúng tôi để được tư vấn và báo giá tốt nhất!
           </p>
           <a 
-            href="tel:0903924405" 
+            href="tel:0962505176" 
             className="bg-white text-green-600 hover:bg-green-50 transition-all font-bold py-2 px-6 rounded-md inline-flex items-center"
           >
             <Phone className="h-5 w-5 mr-2" />
-            0903 924 405
+            0962 505 176
           </a>
         </motion.div>
   

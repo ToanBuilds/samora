@@ -146,8 +146,8 @@ const ContactPage: React.FC = () => {
                             <p>Thành phố Tam Kỳ, Tỉnh Quảng Nam</p>
                             <p className="mt-2">VPDD: 32/5/10 Đường số 12, Phường 11,</p>
                             <p>Quận Gò Vấp, TP.Hồ Chí Minh</p>
-                            <p className="mt-2">Email: maiphuccl@gmail.com</p>
-                            <p>Hotline: 0903 924 405</p>
+                            <p className="mt-2">Email: tuandominh2010@gmail.com</p>
+                            <p>Hotline: 0962 505 176</p>
                         </address>
                     </motion.div>
 
