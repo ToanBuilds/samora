@@ -11,6 +11,25 @@ import {
 
 import { ObjectId } from "mongodb";
 
+// CORS headers helper
+function getCorsHeaders(origin: string | null) {
+  const allowedOrigins = [
+    'https://samora.vn',
+    'https://www.samora.vn',
+    'http://localhost:3000',
+    'http://localhost:3001',
+  ];
+  
+  const isAllowed = origin && allowedOrigins.includes(origin);
+  
+  return {
+    'Access-Control-Allow-Origin': isAllowed ? origin : allowedOrigins[0],
+    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Max-Age': '86400',
+  };
+}
+
 enum ProductCategory {
   CHE_BIEN = "Các sản phẩm chế biến",
   CAY_GIONG_HAT = "Cây giống & Hạt Sâm Ngọc Linh",
@@ -49,8 +68,17 @@ interface Product {
 }
 
 
+export async function OPTIONS(request: NextRequest) {
+  const origin = request.headers.get('origin');
+  return new NextResponse(null, {
+    status: 200,
+    headers: getCorsHeaders(origin),
+  });
+}
+
 export async function GET(request: NextRequest) {
   try {
+    const origin = request.headers.get('origin');
     const { searchParams, pathname } = new URL(request.url);
     const categoryParam = searchParams.get('category');
     const slugPattern = /\/api\/products\/([^\/]+)$/;
@@ -67,16 +95,23 @@ export async function GET(request: NextRequest) {
       if (!product) {
         return NextResponse.json({
           error: 'Product not found',
-        }, { status: 404 });
+        }, { 
+          status: 404,
+          headers: getCorsHeaders(origin),
+        });
       }
       
-      return NextResponse.json(product);
+      return NextResponse.json(product, {
+        headers: getCorsHeaders(origin),
+      });
     }
     
     // Xử lý trường hợp lấy tất cả sản phẩm hoặc lọc theo category
     if (!categoryParam) {
       const products = await db.collection<Product>("Products").find().toArray();
-      return NextResponse.json(products);
+      return NextResponse.json(products, {
+        headers: getCorsHeaders(origin),
+      });
     }
     
     // Chuyển đổi category từ string thành ProductCategory
@@ -85,20 +120,29 @@ export async function GET(request: NextRequest) {
     if (!category) {
       return NextResponse.json({
         error: 'Invalid category',
-      }, { status: 400 });
+      }, { 
+        status: 400,
+        headers: getCorsHeaders(origin),
+      });
     }
     
     const products = await db.collection<Product>('Products')
       .find({ category })
       .toArray();
     
-    return NextResponse.json(products);
+    return NextResponse.json(products, {
+      headers: getCorsHeaders(origin),
+    });
   } catch (error) {
     console.error('Error fetching products:', error);
+    const origin = request.headers.get('origin');
     return NextResponse.json({
       error: 'Failed to fetch products',
       details: error instanceof Error ? error.message : 'Unknown error',
-    }, { status: 500 });
+    }, { 
+      status: 500,
+      headers: getCorsHeaders(origin),
+    });
   }
 }
 
@@ -160,6 +204,7 @@ async function uploadFileToS3(file: File, fileType: string): Promise<string> {
 
 export async function POST(request: NextRequest) {
   try {
+    const origin = request.headers.get('origin');
     const formData = await request.formData();
 
     const name = formData.get('name') as string;
@@ -235,12 +280,18 @@ export async function POST(request: NextRequest) {
       slug: productData.slug,
       imageUrls: productData.images,
       message: 'Product created successfully with images',
+    }, {
+      headers: getCorsHeaders(origin),
     });
   } catch (error) {
     console.error('Product creation error:', error);
+    const origin = request.headers.get('origin');
     return NextResponse.json({
       error: 'Product creation failed',
       details: error instanceof Error ? error.message : 'Unknown error',
-    }, { status: 500 });
+    }, { 
+      status: 500,
+      headers: getCorsHeaders(origin),
+    });
   }
 }

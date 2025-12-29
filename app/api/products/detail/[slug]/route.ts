@@ -3,6 +3,25 @@ import clientPromise from "@/app/services/lib/mongo";
 import { NextRequest, NextResponse } from "next/server";
 import { ObjectId } from "mongodb";
 
+// CORS headers helper
+function getCorsHeaders(origin: string | null) {
+  const allowedOrigins = [
+    'https://samora.vn',
+    'https://www.samora.vn',
+    'http://localhost:3000',
+    'http://localhost:3001',
+  ];
+  
+  const isAllowed = origin && allowedOrigins.includes(origin);
+  
+  return {
+    'Access-Control-Allow-Origin': isAllowed ? origin : allowedOrigins[0],
+    'Access-Control-Allow-Methods': 'GET, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Max-Age': '86400',
+  };
+}
+
 enum ProductCategory {
   CHE_BIEN = "Các sản phẩm chế biến",
   CAY_GIONG_HAT = "Cây giống & Hạt Sâm Ngọc Linh",
@@ -40,11 +59,20 @@ interface Product {
   storageInstructions: string; // Cách bảo quản
 }
 
+export async function OPTIONS(request: NextRequest) {
+  const origin = request.headers.get('origin');
+  return new NextResponse(null, {
+    status: 200,
+    headers: getCorsHeaders(origin),
+  });
+}
+
 export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ slug: string }> }
 ) {
   try {
+    const origin = request.headers.get('origin');
     const { slug } = await params;
     const client = await clientPromise;
     const db = client.db("SamoraDB");
@@ -53,12 +81,24 @@ export async function GET(
     if (!product) {
       return NextResponse.json({
         error: 'Product not found',
-      }, { status: 404 });
+      }, { 
+        status: 404,
+        headers: getCorsHeaders(origin),
+      });
     }
 
-    return NextResponse.json(product);
+    return NextResponse.json(product, {
+      headers: getCorsHeaders(origin),
+    });
   } catch (error) {
     console.error("Error fetching product:", error);
-    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+    const origin = request.headers.get('origin');
+    return NextResponse.json(
+      { error: "Internal server error" }, 
+      { 
+        status: 500,
+        headers: getCorsHeaders(origin),
+      }
+    );
   }
 }
