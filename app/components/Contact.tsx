@@ -52,7 +52,7 @@ const ContactPage: React.FC = () => {
                 className="w-full md:w-1/2 relative h-[25rem] sm:h-[30rem] md:h-screen rounded-xl"
             >
                 <Image
-                    src="/gold.png"
+                    src="/Thiết kế chưa có tên (2).png"
                     alt="Contact Image"
                     fill
                     className="rounded-xl object-cover"
